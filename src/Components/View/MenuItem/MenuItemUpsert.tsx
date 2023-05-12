@@ -3,11 +3,11 @@ import {
 useCreateMenuItemMutation,
 useGetMenuItemByIdQuery,
 useUpdateMenuItemMutation,
-} from "../../Apis/menuItemApi";
-import { inputHelper, toastNotify } from "../../Helper";
+} from "../../../Apis/menuItemApi";
+import { inputHelper, toastNotify } from "../../../Helper";
 import { useNavigate, useParams } from "react-router-dom";
-import { MainLoader } from "../../Components/Page/Common";
-import { SD_Categories } from "../../Utility/SD";
+import { MainLoader } from "../../Common";
+import { SD_Categories } from "../../../Utility/SD";
 
 const Categories = [
   SD_Categories.APPETIZER,
@@ -131,12 +131,10 @@ function MenuItemUpsert() {
   return (
     <div className="container border mt-5 p-5 bg-light">
       {loading && <MainLoader />}
-      <h3 className=" px-2 text-success">
+      <h3 className=" px-2 text-primary">
         {id ? "Edit Menu Item" : "Add Menu Item"}
       </h3>
-      <div className="bg-danger form-control text-center text-white h4">
-      Good food never fails in bringing people together.
-      </div>
+  
       <form method="post" encType="multipart/form-data" onSubmit={handleSubmit}>
         <div className="row mt-3">
           <div className="col-md-7">
@@ -193,8 +191,9 @@ function MenuItemUpsert() {
             <div className="row">
               <div className="col-6">
                 <button
+                  style={{ backgroundColor: '#0a58ca', color: '#ffffff' }}
                   type="submit"
-                  className="btn btn-success form-control mt-3"
+                  className="btn form-control mt-3"
                 >
                   {id ? "Update" : "Create"}
                 </button>

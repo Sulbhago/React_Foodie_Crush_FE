@@ -1,5 +1,6 @@
 import React from "react";
-import { withAuth } from "../HOC";
+import { withAuth } from "../../../HOC";
+
 
 function AuthenticationTest() {
   //Testing  Authentication

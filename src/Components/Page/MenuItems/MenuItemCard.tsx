@@ -3,7 +3,7 @@ import { apiResponse, menuItemModel, userModel } from "../../../Interfaces";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useUpdateShoppingCartMutation } from "../../../Apis/shoppingCartApi";
-import { MiniLoader } from "../Common";
+import { MiniLoader } from "../../Common";
 import { toastNotify } from "../../../Helper";
 import { RootState } from "../../../Storage/Redux/store";
 import { useSelector } from "react-redux";
@@ -59,7 +59,7 @@ function MenuItemCard(props: Props) {
           {props.menuItem.specialTag &&
             props.menuItem.specialTag.length > 0 && (
               <i
-                className="bi bi-star btn btn-success"
+                className="bi bi-star btn"
                 style={{
                   position: "absolute",
                   top: "15px",
@@ -68,6 +68,8 @@ function MenuItemCard(props: Props) {
                   borderRadius: "3px",
                   outline: "none !important",
                   cursor: "pointer",
+                  color: '#ffffff',
+                  backgroundColor: '#0a58ca',
                 }}
               >
                 &nbsp; {props.menuItem.specialTag}
@@ -104,7 +106,7 @@ function MenuItemCard(props: Props) {
             <p className="card-title m-0 text-success fs-3">
               <Link
                 to={`/menuItemDetails/${props.menuItem.id}`}
-                style={{ textDecoration: "none", color: "green" }}
+                style={{ textDecoration: "none", color: "primary" }}
               >
                 {props.menuItem.name}
               </Link>

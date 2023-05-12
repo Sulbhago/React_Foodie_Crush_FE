@@ -1,11 +1,11 @@
 import React from "react";
-import { withAuth } from "../../HOC";
+import { withAuth } from "../../../HOC";
 import { useSelector } from "react-redux";
-import { RootState } from "../../Storage/Redux/store";
-import { useGetAllOrdersQuery } from "../../Apis/orderApi";
-import OrderList from "../../Components/Page/Order/OrderList";
-import { MainLoader } from "../../Components/Page/Common";
-import { SD_Status } from "../../Utility/SD";
+import { RootState } from "../../../Storage/Redux/store";
+import { useGetAllOrdersQuery } from "../../../Apis/orderApi";
+import OrderList from "../../Page/Order/OrderList";
+import { MainLoader } from "../../Common";
+import { SD_Status } from "../../../Utility/SD";
 
 function MyOrders() {
   const userId = useSelector((state: RootState) => state.userAuthStore.id);
@@ -16,10 +16,10 @@ function MyOrders() {
       {!isLoading && (
         <>
           <div className="d-flex align-items-center justify-content-between mx-5 mt-5">
-            <h1 className="text-success">My Orders</h1>
+            <h1 className="text-primary">My Orders</h1>
           </div>
           <div className="mx-5">
-            <div className="bg-danger form-control text-center text-white h4 ">
+            <div className="form-control text-center text-white h4 " style={{ backgroundColor: '#466f74' }}>
               In this demo, orders older than 3 days might be deleted!
             </div>
           </div>

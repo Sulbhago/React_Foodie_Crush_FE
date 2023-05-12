@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useLoginUserMutation } from "../Apis/authApi";
-import { inputHelper } from "../Helper";
-import { apiResponse, userModel } from "../Interfaces";
+import { useLoginUserMutation } from "../../../Apis/authApi";
+import { inputHelper } from "../../../Helper";
+import { apiResponse, userModel } from "../../../Interfaces";
 import jwt_decode from "jwt-decode";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { setLoggedInUser } from "../Storage/Redux/userAuthSlice";
-import { MainLoader } from "../Components/Page/Common";
+import { setLoggedInUser } from "../../../Storage/Redux/userAuthSlice";
+import { MainLoader } from "../../Common";
 
 function Login() {
   const [error, setError] = useState("");
@@ -78,8 +78,8 @@ function Login() {
           {error && <p className="text-danger">{error}</p>}
           <button
             type="submit"
-            className="btn btn-success"
-            style={{ width: "200px" }}
+            className="btn text-white"
+            style={{ width: "200px", backgroundColor: '#0a58ca' }}
           >
             Login
           </button>

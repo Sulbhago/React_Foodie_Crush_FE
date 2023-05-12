@@ -4,7 +4,7 @@ import { useInitiatePaymentMutation } from "../../../Apis/paymentApi";
 import { inputHelper } from "../../../Helper";
 import { apiResponse, cartItemModel } from "../../../Interfaces";
 import { RootState } from "../../../Storage/Redux/store";
-import { MiniLoader } from "../Common";
+import { MiniLoader } from "../../Common";
 import { useNavigate } from "react-router";
 
 export default function CartPickUpDetails() {
@@ -55,7 +55,7 @@ export default function CartPickUpDetails() {
 
   return (
     <div className="border pb-5 pt-3">
-      <h1 style={{ fontWeight: "300" }} className="text-center text-success">
+      <h1 style={{ fontWeight: "300" }} className="text-center text-primary">
         Pickup Details
       </h1>
       <hr />
@@ -105,7 +105,8 @@ export default function CartPickUpDetails() {
         </div>
         <button
           type="submit"
-          className="btn btn-lg btn-success form-control mt-3"
+          className="btn btn-lg form-control mt-3"
+          style={{ backgroundColor: '#0a58ca', color: '#ffffff' }}
           disabled={loading || shoppingCartFromStore.length == 0}
         >
           {loading ? <MiniLoader /> : "Looks Good? Place Order!"}

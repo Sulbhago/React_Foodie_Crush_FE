@@ -1,6 +1,6 @@
 import React from "react";
 import { orderHeaderModel } from "../../../Interfaces";
-import { MainLoader } from "../Common";
+import { MainLoader } from "../../Common";
 import OrderListProps from "./orderListType";
 import { useNavigate } from "react-router-dom";
 import getStatusColor from "../../../Helper/getStatusColor";
@@ -14,14 +14,14 @@ function OrderList({ isLoading, orderData }: OrderListProps) {
         <div className="table px-5">
           <div className="p-2">
             <div className="row border">
-              <div className="col-1">ID</div>
-              <div className="col-2">Name</div>
-              <div className="col-2">Phone</div>
-              <div className="col-1">Total</div>
-              <div className="col-1">Items</div>
-              <div className="col-2">Date</div>
-              <div className="col-2">Status</div>
-              <div className="col-1"></div>
+              <div className="col-1 fw-bold">ID</div>
+              <div className="col-2 fw-bold">Name</div>
+              <div className="col-2 fw-bold">Phone</div>
+              <div className="col-1 fw-bold">Total</div>
+              <div className="col-1 fw-bold">Items</div>
+              <div className="col-2 fw-bold">Date</div>
+              <div className="col-2 fw-bold">Status</div>
+              <div className="col-1 fw-bold"></div>
             </div>
             {orderData.map((orderItem: orderHeaderModel) => {
               const badgeColor = getStatusColor(orderItem.status!);
@@ -45,6 +45,7 @@ function OrderList({ isLoading, orderData }: OrderListProps) {
                   <div className="col-1">
                     <button
                       className="btn btn-success"
+                      style={{ backgroundColor: '#0a58ca', color: '#ffffff' }}
                       onClick={() =>
                         navigate(
                           "/order/orderDetails/" + orderItem.orderHeaderId

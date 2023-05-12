@@ -7,7 +7,7 @@ import { RootState } from "../../../Storage/Redux/store";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { useUpdateOrderHeaderMutation } from "../../../Apis/orderApi";
-import { MainLoader } from "../Common";
+import { MainLoader } from "../../Common";
 import getStatusColor from "../../../Helper/getStatusColor";
 
 function OrderSummary({ data, userInput }: orderSummaryProps) {
@@ -52,7 +52,7 @@ function OrderSummary({ data, userInput }: orderSummaryProps) {
       {!loading && (
         <>
           <div className="d-flex justify-content-between align-items-center">
-            <h3 className="text-success">Order Summary</h3>
+            <h3 className="text-primary">Order Summary</h3>
             <span className={`btn btn-outline-${badgeTypeColor} fs-6`}>
               {data.status}
             </span>
@@ -64,7 +64,7 @@ function OrderSummary({ data, userInput }: orderSummaryProps) {
               Phone : {userInput.phoneNumber}
             </div>
             <div className="border py-3 px-2">
-              <h4 className="text-success">Menu Items</h4>
+              <h4 className="text-primary">Menu Items</h4>
               <div className="p-3">
                 {data.cartItems?.map(
                   (cartItem: cartItemModel, index: number) => {

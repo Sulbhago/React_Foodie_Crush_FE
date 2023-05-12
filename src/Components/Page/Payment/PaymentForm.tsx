@@ -84,8 +84,9 @@ const PaymentForm = ({ data, userInput }: orderSummaryProps) => {
     <form onSubmit={handleSubmit}>
       <PaymentElement />
       <button
+      style={{ backgroundColor: '#0a58ca' }}
         disabled={!stripe || isProcessing}
-        className="btn btn-success mt-5 w-100"
+        className="btn text-white mt-5 w-100"
       >
         <span id="button-text">
           {isProcessing ? "Processing ... " : "Submit Order"}

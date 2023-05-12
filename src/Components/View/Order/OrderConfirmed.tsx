@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import React from "react";
 
-let confirmedImage = require("../../Assets/Images/confirmed.jpg");
+let confirmedImage = require("../../../Assets/Images/confirmed.jpg");
 function OrderConfirmed() {
   const { id } = useParams();
   return (

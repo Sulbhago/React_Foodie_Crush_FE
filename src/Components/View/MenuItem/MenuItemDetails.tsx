@@ -1,13 +1,13 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useGetMenuItemByIdQuery } from "../Apis/menuItemApi";
+import { useGetMenuItemByIdQuery } from "../../../Apis/menuItemApi";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useUpdateShoppingCartMutation } from "../Apis/shoppingCartApi";
-import { MainLoader, MiniLoader } from "../Components/Page/Common";
-import { apiResponse, userModel } from "../Interfaces";
-import { toastNotify } from "../Helper";
-import { RootState } from "../Storage/Redux/store";
+import { useUpdateShoppingCartMutation } from "../../../Apis/shoppingCartApi";
+import { MainLoader, MiniLoader } from "../../Common";
+import { apiResponse, userModel } from "../../../Interfaces";
+import { toastNotify } from "../../../Helper";
+import { RootState } from "../../../Storage/Redux/store";
 import { useSelector } from "react-redux";
 
 function MenuItemDetails() {
@@ -53,7 +53,7 @@ function MenuItemDetails() {
       {!isLoading ? (
         <div className="row">
           <div className="col-7">
-            <h2 className="text-success">{data.result?.name}</h2>
+            <h2 className="text-primary">{data.result?.name}</h2>
             <span>
               <span
                 className="badge text-bg-dark pt-2"
@@ -102,7 +102,8 @@ function MenuItemDetails() {
                   </button>
                 ) : (
                   <button
-                    className="btn btn-success form-control"
+                    style={{ backgroundColor: '#0a58ca', color: '#ffffff' }}
+                    className="btn form-control"
                     onClick={() => handleAddToCart(data.result?.id)}
                   >
                     Add to Cart

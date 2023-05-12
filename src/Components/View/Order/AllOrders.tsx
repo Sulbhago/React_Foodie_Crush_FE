@@ -1,8 +1,8 @@
 import React from "react";
-import { useGetAllOrdersQuery } from "../../Apis/orderApi";
-import { MainLoader } from "../../Components/Page/Common";
-import OrderList from "../../Components/Page/Order/OrderList";
-import { withAdminAuth } from "../../HOC";
+import { useGetAllOrdersQuery } from "../../../Apis/orderApi";
+import { MainLoader } from "../../Common";
+import OrderList from "../../Page/Order/OrderList";
+import { withAdminAuth } from "../../../HOC";
 
 function AllOrders() {
   const { data, isLoading } = useGetAllOrdersQuery("");

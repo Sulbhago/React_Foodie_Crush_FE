@@ -1,6 +1,6 @@
 import React from "react";
-import { CartPickUpDetails, CartSummary } from "../Components/Page/Cart";
-import { withAuth } from "../HOC";
+import { CartPickUpDetails, CartSummary } from "../../Page/Cart";
+import { withAuth } from "../../../HOC";
 
 function ShoppingCart() {
   return (

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useRegisterUserMutation } from "../Apis/authApi";
-import { inputHelper, toastNotify } from "../Helper";
-import { apiResponse } from "../Interfaces";
-import { SD_Roles } from "../Utility/SD";
+import { useRegisterUserMutation } from "../../../Apis/authApi";
+import { inputHelper, toastNotify } from "../../../Helper";
+import { apiResponse } from "../../../Interfaces";
+import { SD_Roles } from "../../../Utility/SD";
 import { useNavigate } from "react-router-dom";
-import { MainLoader } from "../Components/Page/Common";
+import { MainLoader } from "../../Common";
 
 function Register() {
   const [registerUser] = useRegisterUserMutation();
@@ -97,7 +97,7 @@ function Register() {
           </div>
         </div>
         <div className="mt-5">
-          <button type="submit" className="btn btn-success" disabled={loading}>
+          <button type="submit" className="btn text-white" disabled={loading} style={{ backgroundColor: '#0a58ca' }}>
             Register
           </button>
         </div>

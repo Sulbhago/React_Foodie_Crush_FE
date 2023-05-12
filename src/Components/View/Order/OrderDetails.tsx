@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useGetOrderDetailsQuery } from "../../Apis/orderApi";
-import { OrderSummary } from "../../Components/Page/Order";
+import { useGetOrderDetailsQuery } from "../../../Apis/orderApi";
+import { OrderSummary } from "../../Page/Order";
 
 function OrderDetails() {
   const { id } = useParams();
